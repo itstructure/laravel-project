@@ -16,3 +16,33 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/login', function () {
+    return view('auth.login');
+});
+
+/*
+|--------------------------------------------------------------------------
+| Admin section.
+|--------------------------------------------------------------------------
+*/
+Route::group(['prefix'=>'admin', 'namespace' => 'admin', /*'middleware' => ['auth.basic']*/], function () {
+
+    Route::get('/', ['as' => 'admin_page_list', 'uses' => 'PageController@index']);
+
+    // News section.
+    Route::group(['prefix'=>'page'], function () {
+        Route::get('/',            ['as' => 'admin_page_list',   'uses' => 'PageController@index']);
+        Route::get('create',       ['as' => 'admin_page_create', 'uses' => 'PageController@create']);
+        Route::post('store',       ['as' => 'admin_page_store',  'uses' => 'PageController@store']);
+        Route::get('edit/{id}',    ['as' => 'admin_page_edit',   'uses' => 'PageController@edit']);
+        Route::post('update/{id}', ['as' => 'admin_page_update', 'uses' => 'PageController@update']);
+        Route::post('delete',      ['as' => 'admin_page_delete', 'uses' => 'PageController@delete']);
+    });
+});
+
+Auth::routes();
+
+Route::get('/home', function() {
+    return view('home');
+})->name('home')->middleware('auth');
