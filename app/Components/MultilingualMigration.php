@@ -54,15 +54,17 @@ class MultilingualMigration extends Migration
      *
      * @param string $tableName - table name which needs to be translated.
      * @param callable  $multilingualColumnsCallback - callback for multilingual fields.
-     * @param callable  $primaryColumnsCallback - callback for simple fields.
+     * @param callable|null  $primaryColumnsCallback - callback for main(primary) fields.
      *
      * @return void
      */
-    public function createMultilingualTable(string $tableName, callable $multilingualColumnsCallback, callable $primaryColumnsCallback): void
+    public function createMultilingualTable(string $tableName, callable $multilingualColumnsCallback, callable $primaryColumnsCallback = null): void
     {
         $this->createTableWithTimestamps($tableName, function (Blueprint $table) use ($primaryColumnsCallback) {
             $table->id()->primaryKey();
-            $primaryColumnsCallback($table);
+            if (is_callable($primaryColumnsCallback)) {
+                $primaryColumnsCallback($table);
+            }
         });
 
         $keyToPrimaryTable = $this->getKeyToPrimaryTable($tableName);
