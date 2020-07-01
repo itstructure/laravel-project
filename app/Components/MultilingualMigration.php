@@ -61,7 +61,7 @@ class MultilingualMigration extends Migration
     public function createMultilingualTable(string $tableName, callable $multilingualColumnsCallback, callable $primaryColumnsCallback = null): void
     {
         $this->createTableWithTimestamps($tableName, function (Blueprint $table) use ($primaryColumnsCallback) {
-            $table->id()->primaryKey();
+            $table->bigIncrements('id')->primaryKey();
             if (is_callable($primaryColumnsCallback)) {
                 $primaryColumnsCallback($table);
             }
