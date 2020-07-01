@@ -4,6 +4,9 @@ namespace App\Http\Controllers\admin;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Config;
+use Itstructure\GridView\DataProviders\EloquentDataProvider;
+use App\Models\Page;
+
 
 /**
  * Class PageController
@@ -14,10 +17,10 @@ class PageController extends AdminController
 {
     public function index()
     {
-        //$news = News::orderBy('id', 'desc')->paginate(Config::get('app.paginate.news'));
+        $dataProvider = new EloquentDataProvider(Page::query());
 
         return view('admin.page.index', [
-            //'news' => $news
+            'dataProvider' => $dataProvider,
         ]);
     }
 }

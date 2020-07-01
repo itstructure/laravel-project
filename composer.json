@@ -12,6 +12,7 @@
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^1.0",
         "guzzlehttp/guzzle": "^6.3",
+        "itstructure/laravel-grid-view": "dev-master",
         "jeroennoten/laravel-adminlte": "^3.3",
         "laravel/framework": "^7.0",
         "laravel/tinker": "^2.0",
@@ -25,6 +26,15 @@
         "nunomaduro/collision": "^4.1",
         "phpunit/phpunit": "^8.5"
     },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../laravel-grid-view",
+            "options": {
+                "symlink": true
+            }
+        }
+    ],
     "config": {
         "optimize-autoloader": true,
         "preferred-install": "dist",

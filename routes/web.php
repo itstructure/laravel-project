@@ -31,7 +31,7 @@ Route::group(['prefix'=>'admin', 'namespace' => 'admin', /*'middleware' => ['aut
     Route::get('/', ['as' => 'admin_page_list', 'uses' => 'PageController@index']);
 
     // News section.
-    Route::group(['prefix'=>'page'], function () {
+    Route::group(['prefix'=>'pages'], function () {
         Route::get('/',            ['as' => 'admin_page_list',   'uses' => 'PageController@index']);
         Route::get('create',       ['as' => 'admin_page_create', 'uses' => 'PageController@create']);
         Route::post('store',       ['as' => 'admin_page_store',  'uses' => 'PageController@store']);
