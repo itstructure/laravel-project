@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9fbee985fa45714d6c82730a6d781c5a",
+    "content-hash": "cb7f8bf79a2dbfd83538d219499b70f0",
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
@@ -740,14 +740,20 @@
         },
         {
             "name": "itstructure/laravel-grid-view",
-            "version": "dev-master",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/itstructure/laravel-grid-view.git",
+                "reference": "15f855cbf705115f5cedb5ef09125c2e268c1207"
+            },
             "dist": {
-                "type": "path",
-                "url": "../laravel-grid-view",
-                "reference": "84945a74176749799e1f481664920e1601f9372e"
+                "type": "zip",
+                "url": "https://api.github.com/repos/itstructure/laravel-grid-view/zipball/15f855cbf705115f5cedb5ef09125c2e268c1207",
+                "reference": "15f855cbf705115f5cedb5ef09125c2e268c1207",
+                "shasum": ""
             },
             "require": {
-                "laravel/framework": "~5.1.12|~5.2.0|~5.3.0|~5.4.0|~5.5.0|~5.6.0|^6.0|^7.0",
+                "laravel/framework": "~5.5.0|~5.6.0|~5.7.0|~5.8.0|^6.0|^7.0",
                 "php": ">=7.1.0"
             },
             "type": "library",
@@ -763,6 +769,7 @@
                     "Itstructure\\GridView\\": "src/"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -780,9 +787,7 @@
                 "table",
                 "view"
             ],
-            "transport-options": {
-                "symlink": true
-            }
+            "time": "2020-07-03T15:58:46+00:00"
         },
         {
             "name": "jeroennoten/laravel-adminlte",
@@ -6856,9 +6861,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "itstructure/laravel-grid-view": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

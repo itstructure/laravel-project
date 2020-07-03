@@ -2,8 +2,6 @@
 @extends('adminlte::page')
 @section('content')
 
-    <h1>Page list</h1>
-
     @php
     $gridData = [
         'dataProvider' => $dataProvider,
@@ -11,16 +9,19 @@
             'pageName' => 'p',
         ],
         'rowsPerPage' => 5,
-        'title' => 'Panel title',
+        'title' => 'Таблица',
         //'useFilters' => false,
         'strictFilters' => true,
         'columnFields' => [
             [
                 'attribute' => 'id',
-                'filter' => false
+                'filter' => false,
+                'htmlAttributes' => [
+                    'width' => '5%',
+                ],
             ],
             [
-                'label' => 'Active',
+                'label' => 'Активно',
                 'value' => function ($row) {
                     return '<span class="icon fas '.($row->active == 1 ? 'fa-check' : 'fa-times').'"></span>';
                 },
@@ -35,7 +36,7 @@
                 ],
             ],
             [
-                'label' => 'Icon',
+                'label' => 'Иконка',
                 'value' => function ($row) {
                     return $row->icon;
                 },
@@ -44,24 +45,32 @@
                 'format' => [
                     'class' => Itstructure\GridView\Formatters\ImageFormatter::class,
                     'htmlAttributes' => [
-                        'width' => '100px'
+                        'width' => '100'
                     ]
                 ]
             ],
-            'created_at',
+            [
+                'label' => 'Создано',
+                'attribute' => 'created_at'
+            ],
             [
                 'class' => Itstructure\GridView\Columns\ActionColumn::class,
                 'actionTypes' => [
-                    'view' => function ($data) {
-                        return '/admin/pages/' . $data->id . '/view';
-                    },
+                    'view',
                     'edit' => function ($data) {
                         return '/admin/pages/' . $data->id . '/edit';
                     },
-                    'delete',
+                    [
+                        'class' => Itstructure\GridView\Actions\Delete::class,
+                        'url' => function ($data) {
+                            return '/admin/pages/' . $data->id . '/delete';
+                        },
+                        'htmlAttributes' => [
+                            'target' => '_blank',
+                            'onclick' => 'return window.confirm("Are you sure you want to delete?");'
+                        ]
+                    ],
                 ],
-                //'label' => false,
-                //'width' => '12%'
             ],
             [
                 'class' => Itstructure\GridView\Columns\CheckboxColumn::class,
