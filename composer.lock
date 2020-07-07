@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cb7f8bf79a2dbfd83538d219499b70f0",
+    "content-hash": "0ed3298f28ccc3f33176b44dd1017313",
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
@@ -788,6 +788,41 @@
                 "view"
             ],
             "time": "2020-07-03T15:58:46+00:00"
+        },
+        {
+            "name": "itstructure/laravel-rbac",
+            "version": "dev-master",
+            "dist": {
+                "type": "path",
+                "url": "../laravel-rbac",
+                "reference": "938d1d086ea5505461a2adf73257e83cef26666f"
+            },
+            "require": {
+                "laravel/framework": "~5.5.0|~5.6.0|~5.7.0|~5.8.0|^6.0|^7.0",
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Itstructure\\LaRbac\\": "src"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Andrey Girnik",
+                    "email": "girnikandrey@gmail.com",
+                    "homepage": "https://github.com/itstructure",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Laravel package for RBAC manage",
+            "keywords": [
+                "laravel",
+                "rbac"
+            ]
         },
         {
             "name": "jeroennoten/laravel-adminlte",
@@ -6861,7 +6896,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "itstructure/laravel-rbac": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

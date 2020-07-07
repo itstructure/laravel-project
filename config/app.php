@@ -166,6 +166,7 @@ return [
          * Package Service Providers...
          */
         Itstructure\GridView\GridViewServiceProvider::class,
+        Itstructure\LaRbac\RbacServiceProvider::class,
 
         /*
          * Application Service Providers...

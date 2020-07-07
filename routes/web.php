@@ -17,8 +17,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/login', function () {
-    return view('auth.login');
+Route::group(['namespace' => 'Auth'], function () {
+    Route::get('login', ['as' => 'login_form', 'uses' => 'LoginController@showLoginForm']);
+    Route::post('login', ['as' => 'login_action', 'uses' => 'LoginController@login']);
+    Route::get('register', ['as' => 'register_form', 'uses' => 'RegisterController@showRegistrationForm']);
+    Route::post('register', ['as' => 'register_action', 'uses' => 'RegisterController@register']);
 });
 
 /*
@@ -26,7 +29,7 @@ Route::get('/login', function () {
 | Admin section.
 |--------------------------------------------------------------------------
 */
-Route::group(['prefix'=>'admin', 'namespace' => 'admin', /*'middleware' => ['auth.basic']*/], function () {
+Route::group(['prefix'=>'admin', 'namespace' => 'admin', 'middleware' => ['auth']], function () {
 
     Route::get('/', ['as' => 'admin_page_list', 'uses' => 'PageController@index']);
 

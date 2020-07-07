@@ -16,4 +16,8 @@ return [
     'important'                     => 'Важно',
     'warning'                       => 'Внимание',
     'information'                   => 'Информация',
+    'rbac_manager'                  => 'Управление правами',
+    'rbac_users'                    => 'Пользователи',
+    'rbac_roles'                    => 'Роли',
+    'rbac_permissions'              => 'Полномочия',
 ];

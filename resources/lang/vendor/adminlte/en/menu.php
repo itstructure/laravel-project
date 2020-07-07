@@ -16,4 +16,8 @@ return [
     'important'                     => 'Important',
     'warning'                       => 'Warning',
     'information'                   => 'Information',
+    'rbac_manager'                  => 'RBAC manager',
+    'rbac_users'                    => 'Users',
+    'rbac_roles'                    => 'Roles',
+    'rbac_permissions'              => 'Permissions',
 ];

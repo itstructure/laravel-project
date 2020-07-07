@@ -5,10 +5,16 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Itstructure\LaRbac\Interfaces\RbacUserInterface;
+use Itstructure\LaRbac\Traits\Administrable;
 
-class User extends Authenticatable
+/**
+ * Class User
+ * @package App
+ */
+class User extends Authenticatable implements RbacUserInterface
 {
-    use Notifiable;
+    use Notifiable, Administrable;
 
     /**
      * The attributes that are mass assignable.
@@ -16,7 +22,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'roles'
     ];
 
     /**
