@@ -18,38 +18,32 @@ class PermissionSeeder extends Seeder
     public function run()
     {
         $this->createRecord(
-            ucfirst(Permission::ADMIN_PERMISSION),
-            Permission::ADMIN_PERMISSION,
+            Permission::ADMINISTRATE_PERMISSION,
             'Total administrate of users and content'
         );
 
         $this->createRecord(
-            'View record',
-            'view-record',
+            Permission::VIEW_RECORD_PERMISSION,
             'Permission to view record'
         );
 
         $this->createRecord(
-            'Create record',
-            'create-record',
+            Permission::CREATE_RECORD_PERMISSION,
             'Permission to create record'
         );
 
         $this->createRecord(
-            'Update record',
-            'update-record',
+            Permission::UPDATE_RECORD_PERMISSION,
             'Permission to update record'
         );
 
         $this->createRecord(
-            'Delete record',
-            'delete-record',
+            Permission::DELETE_RECORD_PERMISSION,
             'Permission to delete record'
         );
 
         $this->createRecord(
-            'Publish record',
-            'publish-record',
+            Permission::PUBLISH_RECORD_PERMISSION,
             'Permission to publish record'
         );
     }
@@ -57,16 +51,15 @@ class PermissionSeeder extends Seeder
     /**
      * Create permission record in database.
      *
-     * @param string $name
      * @param string $slug
      * @param string $description
      *
      * @return void
      */
-    private function createRecord(string $name, string $slug, string $description): void
+    private function createRecord(string $slug, string $description): void
     {
         Permission::create([
-            'name' => $name,
+            'name' => str_replace('-', ' ', ucfirst($slug)),
             'slug' => $slug,
             'description' => $description,
         ]);

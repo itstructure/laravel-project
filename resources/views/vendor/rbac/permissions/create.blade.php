@@ -1,5 +1,5 @@
 @section('title', 'Create Permission')
-@extends('adminlte::page')
+@extends(config('rbac.layout'))
 @section('content')
 
     <section class="content container-fluid">

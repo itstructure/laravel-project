@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0ed3298f28ccc3f33176b44dd1017313",
+    "content-hash": "f932dd550cfa33e321e8986f0f5b2765",
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
@@ -740,16 +740,16 @@
         },
         {
             "name": "itstructure/laravel-grid-view",
-            "version": "1.0.0",
+            "version": "1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/itstructure/laravel-grid-view.git",
-                "reference": "15f855cbf705115f5cedb5ef09125c2e268c1207"
+                "reference": "5443e3198cbce7fb3220d13342be66b20cc471ff"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itstructure/laravel-grid-view/zipball/15f855cbf705115f5cedb5ef09125c2e268c1207",
-                "reference": "15f855cbf705115f5cedb5ef09125c2e268c1207",
+                "url": "https://api.github.com/repos/itstructure/laravel-grid-view/zipball/5443e3198cbce7fb3220d13342be66b20cc471ff",
+                "reference": "5443e3198cbce7fb3220d13342be66b20cc471ff",
                 "shasum": ""
             },
             "require": {
@@ -787,7 +787,7 @@
                 "table",
                 "view"
             ],
-            "time": "2020-07-03T15:58:46+00:00"
+            "time": "2020-07-09T07:56:51+00:00"
         },
         {
             "name": "itstructure/laravel-rbac",

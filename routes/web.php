@@ -32,6 +32,7 @@ Route::group(['namespace' => 'Auth'], function () {
 Route::group(['prefix'=>'admin', 'namespace' => 'admin', 'middleware' => ['auth']], function () {
 
     Route::get('/', ['as' => 'admin_page_list', 'uses' => 'PageController@index']);
+    Route::post('delete', ['as' => 'admin_page_delete', 'uses' => 'PageController@delete']);
 
     // News section.
     Route::group(['prefix'=>'pages'], function () {

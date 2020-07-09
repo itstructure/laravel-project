@@ -23,4 +23,9 @@ class PageController extends AdminController
             'dataProvider' => $dataProvider,
         ]);
     }
+
+    public function delete(Request $request)
+    {
+        dd($request);
+    }
 }

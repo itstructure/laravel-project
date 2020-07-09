@@ -12,6 +12,7 @@
         'title' => 'Таблица',
         //'useFilters' => false,
         'strictFilters' => true,
+        'rowsFormAction' => route('admin_page_delete'),
         'columnFields' => [
             [
                 'attribute' => 'id',
@@ -26,9 +27,10 @@
                     return '<span class="icon fas '.($row->active == 1 ? 'fa-check' : 'fa-times').'"></span>';
                 },
                 'format' => 'html',
-                'attribute' => 'active',
+                'sort' => 'active',
                 'filter' => [
                     'class' => Itstructure\GridView\Filters\DropdownFilter::class,
+                    'name' => 'active',
                     'data' => [
                         0 => 'No active',
                         1 => 'Active',
@@ -40,7 +42,7 @@
                 'value' => function ($row) {
                     return $row->icon;
                 },
-                'attribute' => 'icon',
+                'sort' => 'icon',
                 'filter' => false,
                 'format' => [
                     'class' => Itstructure\GridView\Formatters\ImageFormatter::class,

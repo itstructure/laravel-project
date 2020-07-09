@@ -1,5 +1,5 @@
 @section('title', 'Assign user roles')
-@extends('adminlte::page')
+@extends(config('rbac.layout'))
 @section('content')
 
     <section class="content container-fluid">
@@ -8,9 +8,9 @@
             <div class="row">
                 <div class="col-md-4">
 
-                    <h1>Assign user roles for: {{ $user->name }}</h1>
+                    <h1>Assign user roles for: {{ $user->memberName }}</h1>
 
-                    <form action="{{ route('update_user', ['user' => $user->id]) }}" method="post">
+                    <form action="{{ route('update_user', ['id' => $user->memberKey]) }}" method="post">
 
                         @include('rbac::users._fields')
 

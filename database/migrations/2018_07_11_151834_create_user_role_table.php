@@ -47,7 +47,7 @@ class CreateUserRoleTable extends Migration
 
         $userModelTable = $userModel->getTable();
 
-        $userModelKeyName = $userModel->getKeyName();
+        $userModelKeyName = $userModel->getAuthIdentifierName();
 
         $usersTablePrimaryType = Schema::getConnection()->getDoctrineColumn($userModelTable, $userModelKeyName)->getType()->getName();
 

@@ -7,12 +7,22 @@
 
     <div class="container">
         <div class="row">
-            @foreach($allRoles as $role)
-                <input type="checkbox" name="roles[]" value="{{ $role->id }}"
-                       @if(!Auth::user()->canAssignRole($user, $role)) onclick="window.event.returnValue=false" @endif
-                       @if(isset($currentRoles) && in_array($role->id, $currentRoles)) checked @endif >{{ $role->name }}
-                <br>
-            @endforeach
+            <div class="col-12">
+                @foreach($allRoles as $role)
+                    <p>
+                        <input type="checkbox" name="roles[]" value="{{ $role->id }}"
+                               @cannot(Itstructure\LaRbac\Models\Permission::ASSIGN_ROLE_FLAG, Itstructure\LaRbac\Classes\MemberToRole::make($user, $role)) disabled @endcannot
+                               @if(isset($currentRoles) && in_array($role->id, $currentRoles)) checked @endif > {{ $role->name }}
+
+
+                        @if(isset($currentRoles) && in_array($role->id, $currentRoles))
+                            @cannot(Itstructure\LaRbac\Models\Permission::ASSIGN_ROLE_FLAG, Itstructure\LaRbac\Classes\MemberToRole::make($user, $role))
+                                <input type="hidden" name="roles[]" value="{{ $role->id }}">
+                            @endcannot
+                        @endif
+                    </p>
+                @endforeach
+            </div>
         </div>
     </div>
 

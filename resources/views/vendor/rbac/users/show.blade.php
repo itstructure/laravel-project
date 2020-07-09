@@ -1,20 +1,20 @@
 @section('title', 'Show User')
-@extends('adminlte::page')
+@extends(config('rbac.layout'))
 @section('content')
 
     <section class="content container-fluid">
         <div class="user-show">
 
-            <h1>Show user: {{ $user->name }}</h1>
+            <h1>Show user: {{ $user->memberName }}</h1>
 
             <p>
                 <form action="{{ route('delete_user') }}" method="post">
-                    <a class="btn btn-success" href="{{ route('edit_user', ['id' => $user->id]) }}"
+                    <a class="btn btn-success" href="{{ route('edit_user', ['id' => $user->memberKey]) }}"
                        title="Edit">Assign user roles</a>
-                    @can('delete-yourself', $user->id)
+                    @can(Itstructure\LaRbac\Models\Permission::DELETE_MEMBER_FLAG, $user->memberKey)
                         <input type="submit" class="btn btn-danger" value="Delete user" title="Delete"
                                onclick="if (!confirm('{{ config('rbac.deleteConfirmation') }}')) {return false;}">
-                        <input type="hidden" value="{{ $user->id }}" name="items[]">
+                        <input type="hidden" value="{{ $user->memberKey }}" name="items[]">
                         <input type="hidden" value="{!! csrf_token() !!}" name="_token">
                     @endcan
                 </form>
@@ -30,7 +30,7 @@
                 <tbody>
                     <tr>
                         <td>Name</td>
-                        <td>{{ $user->name }}</td>
+                        <td>{{ $user->memberName }}</td>
                     </tr>
                     <tr>
                         <td>Roles</td>
