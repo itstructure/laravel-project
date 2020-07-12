@@ -4,7 +4,6 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 use Itstructure\LaRbac\Helpers\Helper;
-use Itstructure\LaRbac\Exceptions\InvalidConfigException;
 
 /**
  * Class CreateUserRoleTable
@@ -16,7 +15,7 @@ class CreateUserRoleTable extends Migration
     /**
      * @var string
      */
-    private $userModelClass;
+    protected $userModelClass;
 
     /**
      * UserController constructor.
@@ -24,39 +23,32 @@ class CreateUserRoleTable extends Migration
     public function __construct()
     {
         $this->userModelClass = config('rbac.userModelClass');
-
-        Helper::checkUserModel($this->userModelClass);
     }
 
     /**
      * Run the migrations.
      * @throws Exception
-     * @throws InvalidConfigException
+     * @throws \Exception
      */
     public function up()
     {
-        /* @var Illuminate\Foundation\Auth\User $userModel */
-        $userModel = new $this->userModelClass();
-        $userModel->getKeyType();
+        Helper::checkUserModel($this->userModelClass);
 
-        $userModelKeyType = $userModel->getKeyType();
+        /* @var Illuminate\Foundation\Auth\User $userNewModel */
+        $userNewModel = new $this->userModelClass();
 
-        if (!in_array($userModelKeyType, ['int', 'integer'])) {
-            throw new InvalidConfigException('User Model keyType must be type of int.');
-        }
+        Helper::checkUserModelKeyType($userNewModel);
 
-        $userModelTable = $userModel->getTable();
+        $userModelTable = $userNewModel->getTable();
 
-        $userModelKeyName = $userModel->getAuthIdentifierName();
+        $userModelKeyName = $userNewModel->getAuthIdentifierName();
 
-        $usersTablePrimaryType = Schema::getConnection()->getDoctrineColumn($userModelTable, $userModelKeyName)->getType()->getName();
+        $userTablePrimaryType = Schema::getConnection()->getDoctrineColumn($userModelTable, $userModelKeyName)->getType()->getName();
 
-        if (!in_array($usersTablePrimaryType, ['bigint', 'integer'])) {
-            throw new \Exception('Primary key '.$userModelKeyName.' in '.$userModelTable.' must be type of bigint or integer');
-        }
+        Helper::checkUserTablePrimaryType($userTablePrimaryType, $userModelKeyName, $userModelTable);
 
-        Schema::create('user_role', function (Blueprint $table) use ($userModelKeyName, $userModelTable, $usersTablePrimaryType) {
-            switch ($usersTablePrimaryType) {
+        Schema::create('user_role', function (Blueprint $table) use ($userModelKeyName, $userModelTable, $userTablePrimaryType) {
+            switch ($userTablePrimaryType) {
                 case 'bigint':
                     $table->unsignedBigInteger('user_id');
                     break;
@@ -74,7 +66,6 @@ class CreateUserRoleTable extends Migration
 
     /**
      * Reverse the migrations.
-     *
      * @return void
      */
     public function down()

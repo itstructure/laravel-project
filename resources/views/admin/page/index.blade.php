@@ -49,7 +49,7 @@
                     'htmlAttributes' => [
                         'width' => '100'
                     ]
-                ]
+                ],
             ],
             [
                 'label' => 'Создано',
@@ -73,6 +73,9 @@
                         ]
                     ],
                 ],
+                'htmlAttributes' => [
+                    'width' => '175'
+                ]
             ],
             [
                 'class' => Itstructure\GridView\Columns\CheckboxColumn::class,

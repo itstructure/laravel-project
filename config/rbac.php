@@ -1,17 +1,12 @@
 <?php
 
 return [
-    // Main
-    'layout' => 'adminlte::page',
-    'userModelClass' => App\User::class,
-    'adminUserId' => 1,
-    'routesMainPermission' => Itstructure\LaRbac\Models\Permission::ADMINISTRATE_PERMISSION,
-    'memberNameAttributeKey' => 'name',
-    'paginate' => [
-        'main' => 2,
-    ],
-
-    // Messages
-    'deleteConfirmation' => 'Are you sure you want to delete?',
-    'deleteRequired' => 'Select items before delete.'
+    'layout' => 'adminlte::page', // You must set it. Example: 'layout' => 'adminlte::page'
+    'userModelClass' => App\User::class, // You can change it
+    'adminUserId' => 1, // You must set it. This is the initial user id, which must be an administrator, at least at the first stage.
+    //'routesMainPermission' => Itstructure\LaRbac\Models\Permission::ADMINISTRATE_PERMISSION,  // You can change it
+    'memberNameAttributeKey' => function ($row) { // You can change it. And can simply set 'memberNameAttributeKey' => 'name'
+        return $row->name;
+    },
+    'rowsPerPage' => 10,
 ];

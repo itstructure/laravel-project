@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f932dd550cfa33e321e8986f0f5b2765",
+    "content-hash": "bfcfdb58813e8b9eaf5376488d814fbb",
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
@@ -740,16 +740,16 @@
         },
         {
             "name": "itstructure/laravel-grid-view",
-            "version": "1.0.2",
+            "version": "1.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/itstructure/laravel-grid-view.git",
-                "reference": "5443e3198cbce7fb3220d13342be66b20cc471ff"
+                "reference": "6b9cf2bc1f9daf9d5c14648dd720ff3d3b865934"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itstructure/laravel-grid-view/zipball/5443e3198cbce7fb3220d13342be66b20cc471ff",
-                "reference": "5443e3198cbce7fb3220d13342be66b20cc471ff",
+                "url": "https://api.github.com/repos/itstructure/laravel-grid-view/zipball/6b9cf2bc1f9daf9d5c14648dd720ff3d3b865934",
+                "reference": "6b9cf2bc1f9daf9d5c14648dd720ff3d3b865934",
                 "shasum": ""
             },
             "require": {
@@ -787,19 +787,26 @@
                 "table",
                 "view"
             ],
-            "time": "2020-07-09T07:56:51+00:00"
+            "time": "2020-07-10T04:55:02+00:00"
         },
         {
             "name": "itstructure/laravel-rbac",
-            "version": "dev-master",
+            "version": "2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/itstructure/laravel-rbac.git",
+                "reference": "9da209227fcc94b71dc9dd208a05e06d5847e994"
+            },
             "dist": {
-                "type": "path",
-                "url": "../laravel-rbac",
-                "reference": "938d1d086ea5505461a2adf73257e83cef26666f"
+                "type": "zip",
+                "url": "https://api.github.com/repos/itstructure/laravel-rbac/zipball/9da209227fcc94b71dc9dd208a05e06d5847e994",
+                "reference": "9da209227fcc94b71dc9dd208a05e06d5847e994",
+                "shasum": ""
             },
             "require": {
-                "laravel/framework": "~5.5.0|~5.6.0|~5.7.0|~5.8.0|^6.0|^7.0",
-                "php": ">=7.1.0"
+                "itstructure/laravel-grid-view": "~1.0.4",
+                "laravel/framework": "^6.0|^7.0",
+                "php": ">=7.2.0"
             },
             "type": "library",
             "autoload": {
@@ -807,6 +814,7 @@
                     "Itstructure\\LaRbac\\": "src"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -821,8 +829,11 @@
             "description": "Laravel package for RBAC manage",
             "keywords": [
                 "laravel",
-                "rbac"
-            ]
+                "permission",
+                "rbac",
+                "role"
+            ],
+            "time": "2020-07-12T12:32:14+00:00"
         },
         {
             "name": "jeroennoten/laravel-adminlte",
@@ -6896,9 +6907,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "itstructure/laravel-rbac": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
