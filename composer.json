@@ -13,6 +13,7 @@
         "fruitcake/laravel-cors": "^1.0",
         "guzzlehttp/guzzle": "^6.3",
         "itstructure/laravel-grid-view": "~1.0.4",
+        "itstructure/laravel-multi-menu": "~2.0.0",
         "itstructure/laravel-rbac": "~2.0.0",
         "jeroennoten/laravel-adminlte": "~3.3.1",
         "laravel/framework": "^7.0",

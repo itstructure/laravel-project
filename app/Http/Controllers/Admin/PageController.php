@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\admin;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Config;
@@ -20,7 +20,7 @@ class PageController extends AdminController
         $dataProvider = new EloquentDataProvider(Page::query());
 
         return view('admin.page.index', [
-            'dataProvider' => $dataProvider,
+            'dataProvider' => $dataProvider
         ]);
     }
 

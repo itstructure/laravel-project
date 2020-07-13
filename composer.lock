@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bfcfdb58813e8b9eaf5376488d814fbb",
+    "content-hash": "6c907d38fa9c30be8804ebbf20d47b58",
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
@@ -788,6 +788,48 @@
                 "view"
             ],
             "time": "2020-07-10T04:55:02+00:00"
+        },
+        {
+            "name": "itstructure/laravel-multi-menu",
+            "version": "2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/itstructure/laravel-multi-menu.git",
+                "reference": "a6b02d211571c6b09942e9926928f9bc42ef85d4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/itstructure/laravel-multi-menu/zipball/a6b02d211571c6b09942e9926928f9bc42ef85d4",
+                "reference": "a6b02d211571c6b09942e9926928f9bc42ef85d4",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "~5.5.0|~5.6.0|~5.7.0|~5.8.0|^6.0|^7.0",
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Itstructure\\MultiMenu\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Andrey Girnik",
+                    "email": "girnikandrey@gmail.com"
+                }
+            ],
+            "description": "Widget for rendering multilevel menu for Laravel-5 Framework",
+            "keywords": [
+                "laravel",
+                "menu",
+                "widget"
+            ],
+            "time": "2020-07-13T17:22:52+00:00"
         },
         {
             "name": "itstructure/laravel-rbac",

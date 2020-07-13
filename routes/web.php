@@ -29,7 +29,7 @@ Route::group(['namespace' => 'Auth'], function () {
 | Admin section.
 |--------------------------------------------------------------------------
 */
-Route::group(['prefix'=>'admin', 'namespace' => 'admin', 'middleware' => ['auth']], function () {
+Route::group(['prefix'=>'admin', 'namespace' => 'Admin', 'middleware' => ['auth']], function () {
 
     Route::get('/', ['as' => 'admin_page_list', 'uses' => 'PageController@index']);
     Route::post('delete', ['as' => 'admin_page_delete', 'uses' => 'PageController@delete']);
