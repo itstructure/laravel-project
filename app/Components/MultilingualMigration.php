@@ -13,14 +13,14 @@ use Illuminate\Support\Facades\Schema;
 class MultilingualMigration extends Migration
 {
     /**
-     * Postfix for translate table name.
-     */
-    public static $translate_table_postfix = 'languages';
-
-    /**
      * Table name to contain the project languages.
      */
-    public static $language_table_name = 'languages';
+    const LANGUAGE_TABLE_NAME = 'languages';
+
+    /**
+     * Primary key name for any table in a system.
+     */
+    const PRIMARY_KEY_NAME = 'id';
 
     /**
      * Creates table with timestamp fields: created_at and updated_at.
@@ -41,14 +41,14 @@ class MultilingualMigration extends Migration
     /**
      * Creates two tables: main(primary) table and translate table.
      * For example:
-     * catalog:
+     * pages:
      *  - id
      *  - created_at
      *  - updated_at
      *
-     * catalog_language:
-     *  - catalog_id
-     *  - language_id
+     * pages_languages:
+     *  - pages_id
+     *  - languages_id
      *  - title
      *  - text
      *
@@ -61,16 +61,16 @@ class MultilingualMigration extends Migration
     public function createMultilingualTable(string $tableName, callable $multilingualColumnsCallback, callable $primaryColumnsCallback = null): void
     {
         $this->createTableWithTimestamps($tableName, function (Blueprint $table) use ($primaryColumnsCallback) {
-            $table->bigIncrements('id')->primaryKey();
+            $table->bigIncrements(self::PRIMARY_KEY_NAME)->primaryKey();
             if (is_callable($primaryColumnsCallback)) {
                 $primaryColumnsCallback($table);
             }
         });
 
-        $keyToPrimaryTable = $this->getKeyToPrimaryTable($tableName);
-        $keyToLanguageTable = self::getKeyToLanguageTable();
+        $keyToPrimaryTable = $this->keyToPrimaryTable($tableName);
+        $keyToLanguageTable = self::keyToLanguageTable();
 
-        $translateTableName = $this->getTranslateTableName($tableName);
+        $translateTableName = $this->translateTableName($tableName);
 
         $this->createTableWithTimestamps($translateTableName, function (Blueprint $table) use ($keyToPrimaryTable, $keyToLanguageTable, $multilingualColumnsCallback, $tableName) {
             $table->unsignedBigInteger($keyToPrimaryTable);
@@ -78,8 +78,8 @@ class MultilingualMigration extends Migration
             $table->primary([$keyToPrimaryTable, $keyToLanguageTable]);
             $multilingualColumnsCallback($table);
 
-            $table->foreign($keyToPrimaryTable)->references('id')->on($tableName)->onDelete('cascade');
-            $table->foreign($keyToLanguageTable)->references('id')->on(static::$language_table_name)->onDelete('cascade');
+            $table->foreign($keyToPrimaryTable)->references(self::PRIMARY_KEY_NAME)->on($tableName)->onDelete('cascade');
+            $table->foreign($keyToLanguageTable)->references(self::PRIMARY_KEY_NAME)->on(self::LANGUAGE_TABLE_NAME)->onDelete('cascade');
         });
     }
 
@@ -92,7 +92,7 @@ class MultilingualMigration extends Migration
      */
     public function dropMultilingualTable(string $tableName): void
     {
-        Schema::dropIfExists($this->getTranslateTableName($tableName));
+        Schema::dropIfExists($this->translateTableName($tableName));
         Schema::dropIfExists($tableName);
     }
 
@@ -101,9 +101,9 @@ class MultilingualMigration extends Migration
      *
      * @return string
      */
-    public static function getKeyToLanguageTable(): string
+    public static function keyToLanguageTable(): string
     {
-        return static::$language_table_name . '_id';
+        return self::LANGUAGE_TABLE_NAME . '_id';
     }
 
     /**
@@ -113,9 +113,9 @@ class MultilingualMigration extends Migration
      *
      * @return string
      */
-    private function getTranslateTableName(string $tableName): string
+    private function translateTableName(string $tableName): string
     {
-        return $tableName . '_' . static::$translate_table_postfix;
+        return $tableName . '_' . self::LANGUAGE_TABLE_NAME;
     }
 
     /**
@@ -125,7 +125,7 @@ class MultilingualMigration extends Migration
      *
      * @return string
      */
-    private function getKeyToPrimaryTable(string $tableName): string
+    private function keyToPrimaryTable(string $tableName): string
     {
         return $tableName . '_id';
     }

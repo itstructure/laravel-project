@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Traits\MultilingualTrait;
 
 /**
  * Class Page
@@ -11,6 +12,8 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Page extends Model
 {
+    use MultilingualTrait;
+
     protected $table = 'pages';
 
     protected $fillable = ['parent_id', 'active', 'icon'];
