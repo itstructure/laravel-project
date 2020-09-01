@@ -233,24 +233,38 @@ return [
     'menu' => [
         [
             'text' => 'pages',
-            'url'  => '/admin/pages',
             'icon' => 'fas fa-fw fa-file',
+            'submenu' => [
+                [
+                    'text' => 'List',
+                    'url'  => '/admin/pages',
+                    'icon' => 'fas fa-fw fa-list',
+                ],
+                [
+                    'text' => 'Create',
+                    'url'  => '/admin/pages/create',
+                    'icon' => 'fas fa-fw fa-plus-square',
+                ],
+            ],
         ],
         [
             'text'    => 'rbac_manager',
-            'icon'    => 'fas fa-fw fa-share',
+            'icon'    => 'fas fa-fw fa-user-cog',
             'submenu' => [
                 [
                     'text' => 'rbac_users',
                     'url'  => '/rbac/users',
+                    'icon' => 'fas fa-fw fa-users',
                 ],
                 [
                     'text' => 'rbac_roles',
                     'url'  => '/rbac/roles',
+                    'icon' => 'fas fa-fw fa-user-tag',
                 ],
                 [
                     'text' => 'rbac_permissions',
                     'url'  => '/rbac/permissions',
+                    'icon' => 'fas fa-fw fa-user-lock',
                 ],
             ],
         ],

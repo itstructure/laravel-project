@@ -22,6 +22,14 @@
                 ],
             ],
             [
+                'label' => 'Заголовок',
+                'value' => function ($row) {
+                    /** @var App\Models\Page $row */
+                    return $row->defaultTranslate('title');
+                },
+                'filter' => false,
+            ],
+            [
                 'label' => 'Активно',
                 'value' => function ($row) {
                     return '<span class="icon fas '.($row->active == 1 ? 'fa-check' : 'fa-times').'"></span>';
@@ -60,12 +68,12 @@
                 'actionTypes' => [
                     'view',
                     'edit' => function ($data) {
-                        return '/admin/pages/' . $data->id . '/edit';
+                        return '/admin/pages/edit/' . $data->id;
                     },
                     [
                         'class' => Itstructure\GridView\Actions\Delete::class,
                         'url' => function ($data) {
-                            return '/admin/pages/' . $data->id . '/delete';
+                            return '/admin/pages/delete/' . $data->id;
                         },
                         'htmlAttributes' => [
                             'target' => '_blank',

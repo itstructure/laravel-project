@@ -3,7 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Traits\MultilingualTrait;
+use App\Traits\MultilingualModelTrait;
 
 /**
  * Class Page
@@ -12,7 +12,7 @@ use App\Traits\MultilingualTrait;
  */
 class Page extends Model
 {
-    use MultilingualTrait;
+    use MultilingualModelTrait;
 
     protected $table = 'pages';
 

@@ -10,7 +10,7 @@ use App\Components\MultilingualMigration;
 use App\Models\Language;
 
 /**
- * Class MultilingualTrait
+ * Class MultilingualModelTrait
  *
  * @property Collection|Model[] $translateList
  *
@@ -21,7 +21,7 @@ use App\Models\Language;
  *
  * @author Andrey Girnik <girnikandrey@gmail.com>
  */
-trait MultilingualTrait
+trait MultilingualModelTrait
 {
     /**
      * Container for temporary storage of translation data.
@@ -80,7 +80,9 @@ trait MultilingualTrait
     public function __set($name, $value)
     {
         if (false === $this->isMultiLanguageField($name)) {
-            parent::__set($name, $value);
+            if ($this->isFillable($name)) {
+                parent::__set($name, $value);
+            }
             return;
         }
 

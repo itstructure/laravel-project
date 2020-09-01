@@ -31,6 +31,15 @@ class Language extends Model
     }
 
     /**
+     * List of available languages.
+     * @return mixed
+     */
+    public static function languageList()
+    {
+        return static::get();
+    }
+
+    /**
      * @return Language|null
      */
     public static function defaultLanguage()
