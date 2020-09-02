@@ -66,11 +66,13 @@
             [
                 'class' => Itstructure\GridView\Columns\ActionColumn::class,
                 'actionTypes' => [
-                    'view',
+                    'view' => function ($data) {
+                        return '/admin/pages/view/' . $data->id;
+                    },
                     'edit' => function ($data) {
                         return '/admin/pages/edit/' . $data->id;
                     },
-                    [
+                    /*[
                         'class' => Itstructure\GridView\Actions\Delete::class,
                         'url' => function ($data) {
                             return '/admin/pages/delete/' . $data->id;
@@ -79,7 +81,7 @@
                             'target' => '_blank',
                             'onclick' => 'return window.confirm("Are you sure you want to delete?");'
                         ]
-                    ],
+                    ],*/
                 ],
                 'htmlAttributes' => [
                     'width' => '175'

@@ -3,11 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Config;
 use Itstructure\GridView\DataProviders\EloquentDataProvider;
 use App\Models\Page;
 use App\Models\Language;
 use App\Http\Requests\{StorePageRequest, UpdatePageRequest};
+use App\Helpers\MultilingualHelper;
 
 
 /**
@@ -45,13 +45,7 @@ class PageController extends AdminController
      */
     public function store(StorePageRequest $request)
     {
-        $model = new Page();
-
-        foreach ($request->all() as $attribute => $value) {
-            $model->{$attribute} = $value;
-        }
-
-        $model->save();
+        MultilingualHelper::fill(new Page(), $request->all())->save();
 
         return redirect()->route('admin_page_list');
     }
@@ -75,19 +69,31 @@ class PageController extends AdminController
      */
     public function update(int $id, UpdatePageRequest $request)
     {
-        $model = Page::findOrFail($id);
+        MultilingualHelper::fill(Page::findOrFail($id), $request->all())->save();
 
-        foreach ($request->all() as $attribute => $value) {
-            $model->{$attribute} = $value;
-        }
+        return redirect()->route('admin_page_view', ['id' => $id]);
+    }
 
-        $model->save();
+    /**
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function delete(Request $request)
+    {
+        Page::destroy($request->post('delete'));
 
         return redirect()->route('admin_page_list');
     }
 
-    public function delete(Request $request)
+    /**
+     * @param int $id
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function view(int $id)
     {
-        dd($request);
+        $model = Page::findOrFail($id);
+        $languageList = Language::languageList();
+
+        return view('admin.page.view', compact('model', 'languageList'));
     }
 }

@@ -1,6 +1,7 @@
 <?php
 namespace App\Helpers;
 
+use Illuminate\Database\Eloquent\Model;
 use App\Models\Language;
 
 /**
@@ -15,7 +16,7 @@ class MultilingualHelper
      * @param array $shortLanguageList
      * @return array
      */
-    public static function fieldsTransformer(array $fields, callable $transformer, array $shortLanguageList = [])
+    public static function fieldsTransformer(array $fields, callable $transformer, array $shortLanguageList = []): array
     {
         $output = [];
 
@@ -30,5 +31,19 @@ class MultilingualHelper
         }
 
         return $output;
+    }
+
+    /**
+     * @param Model $model
+     * @param array $attributes
+     * @return Model
+     */
+    public static function fill(Model $model, array $attributes): Model
+    {
+        foreach ($attributes as $key => $value) {
+            $model->{$key} = $value;
+        }
+
+        return $model;
     }
 }

@@ -42,6 +42,7 @@ Route::group(['prefix'=>'admin', 'namespace' => 'Admin', 'middleware' => ['auth'
         Route::get('edit/{id}',    ['as' => 'admin_page_edit',   'uses' => 'PageController@edit']);
         Route::post('update/{id}', ['as' => 'admin_page_update', 'uses' => 'PageController@update']);
         Route::post('delete',      ['as' => 'admin_page_delete', 'uses' => 'PageController@delete']);
+        Route::get('view/{id}',    ['as' => 'admin_page_view',   'uses' => 'PageController@view']);
     });
 });
 
