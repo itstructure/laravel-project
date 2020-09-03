@@ -3,7 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Traits\MultilingualModelTrait;
+use Itstructure\Mult\Traits\MultilingualModelTrait;
 
 /**
  * Class Page

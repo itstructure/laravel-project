@@ -2,8 +2,8 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use App\Models\Language;
-use App\Helpers\MultilingualHelper;
+use Itstructure\Mult\Models\Language;
+use Itstructure\Mult\Helpers\MultilingualHelper;
 
 /**
  * Class UpdatePageRequest

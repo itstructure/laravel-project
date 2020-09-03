@@ -11,7 +11,6 @@ class CreateLanguagesTable extends Migration
 {
     /**
      * Run the migrations.
-     *
      * @return void
      */
     public function up()
@@ -24,13 +23,10 @@ class CreateLanguagesTable extends Migration
             $table->unsignedTinyInteger('default')->default(0);
             $table->timestamps();
         });
-
-        DB::statement("INSERT INTO languages(`locale`, `short_name`, `name`, `default`, `created_at`, `updated_at`) VALUES ('en-EN', 'en', 'English', 1, NOW(), NOW())");
     }
 
     /**
      * Reverse the migrations.
-     *
      * @return void
      */
     public function down()

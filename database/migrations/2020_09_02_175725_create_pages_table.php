@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Schema\Blueprint;
-use App\Components\MultilingualMigration;
+use Itstructure\Mult\Classes\MultilingualMigration;
 
 /**
  * Class CreatePagesTable

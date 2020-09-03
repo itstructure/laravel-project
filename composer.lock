@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6c907d38fa9c30be8804ebbf20d47b58",
+    "content-hash": "b8b519091c06e6a1f8c118043c887b51",
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
@@ -830,6 +830,50 @@
                 "widget"
             ],
             "time": "2020-07-13T17:22:52+00:00"
+        },
+        {
+            "name": "itstructure/laravel-multilingual-tools",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/itstructure/laravel-multilingual-tools.git",
+                "reference": "d8b328cadac3a0c9e983dfec180c878034a1ada0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/itstructure/laravel-multilingual-tools/zipball/d8b328cadac3a0c9e983dfec180c878034a1ada0",
+                "reference": "d8b328cadac3a0c9e983dfec180c878034a1ada0",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "^7.0",
+                "php": ">=7.2.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Itstructure\\Mult\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Andrey Girnik",
+                    "email": "girnikandrey@gmail.com",
+                    "homepage": "https://github.com/itstructure",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Laravel package for multilingual content manage",
+            "keywords": [
+                "language",
+                "laravel",
+                "multilingual"
+            ],
+            "time": "2020-09-03T03:45:09+00:00"
         },
         {
             "name": "itstructure/laravel-rbac",
@@ -5945,6 +5989,7 @@
             "keywords": [
                 "tokenizer"
             ],
+            "abandoned": true,
             "time": "2019-09-17T06:23:10+00:00"
         },
         {

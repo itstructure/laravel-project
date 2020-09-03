@@ -4,10 +4,11 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use Itstructure\GridView\DataProviders\EloquentDataProvider;
-use App\Models\Page;
-use App\Models\Language;
+use Itstructure\Mult\Models\Language;
+use Itstructure\Mult\Helpers\MultilingualHelper;
 use App\Http\Requests\{StorePageRequest, UpdatePageRequest};
-use App\Helpers\MultilingualHelper;
+use App\Models\Page;
+
 
 
 /**
