@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b8b519091c06e6a1f8c118043c887b51",
+    "content-hash": "9d598a257ee67543d4367597843874fa",
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
@@ -791,20 +791,20 @@
         },
         {
             "name": "itstructure/laravel-multi-menu",
-            "version": "2.0.0",
+            "version": "2.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/itstructure/laravel-multi-menu.git",
-                "reference": "a6b02d211571c6b09942e9926928f9bc42ef85d4"
+                "reference": "c8c53951c89515ee335486ede68b6bf25ee44da7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itstructure/laravel-multi-menu/zipball/a6b02d211571c6b09942e9926928f9bc42ef85d4",
-                "reference": "a6b02d211571c6b09942e9926928f9bc42ef85d4",
+                "url": "https://api.github.com/repos/itstructure/laravel-multi-menu/zipball/c8c53951c89515ee335486ede68b6bf25ee44da7",
+                "reference": "c8c53951c89515ee335486ede68b6bf25ee44da7",
                 "shasum": ""
             },
             "require": {
-                "laravel/framework": "~5.5.0|~5.6.0|~5.7.0|~5.8.0|^6.0|^7.0",
+                "laravel/framework": "~5.5.0|~5.6.0|~5.7.0|~5.8.0|^6.0|^7.0|^8.0",
                 "php": ">=7.1.0"
             },
             "type": "library",
@@ -829,20 +829,20 @@
                 "menu",
                 "widget"
             ],
-            "time": "2020-07-13T17:22:52+00:00"
+            "time": "2020-09-09T17:57:11+00:00"
         },
         {
             "name": "itstructure/laravel-multilingual-tools",
-            "version": "1.0.1",
+            "version": "1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/itstructure/laravel-multilingual-tools.git",
-                "reference": "d8b328cadac3a0c9e983dfec180c878034a1ada0"
+                "reference": "e1557adfb58ad39b79d2ed9f3db4a07f9e96138b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itstructure/laravel-multilingual-tools/zipball/d8b328cadac3a0c9e983dfec180c878034a1ada0",
-                "reference": "d8b328cadac3a0c9e983dfec180c878034a1ada0",
+                "url": "https://api.github.com/repos/itstructure/laravel-multilingual-tools/zipball/e1557adfb58ad39b79d2ed9f3db4a07f9e96138b",
+                "reference": "e1557adfb58ad39b79d2ed9f3db4a07f9e96138b",
                 "shasum": ""
             },
             "require": {
@@ -873,20 +873,20 @@
                 "laravel",
                 "multilingual"
             ],
-            "time": "2020-09-03T03:45:09+00:00"
+            "time": "2020-09-09T18:18:05+00:00"
         },
         {
             "name": "itstructure/laravel-rbac",
-            "version": "2.0.0",
+            "version": "2.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/itstructure/laravel-rbac.git",
-                "reference": "9da209227fcc94b71dc9dd208a05e06d5847e994"
+                "reference": "1738745d0d1d5367c8c0eeaeb1a2065daa0a7a35"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itstructure/laravel-rbac/zipball/9da209227fcc94b71dc9dd208a05e06d5847e994",
-                "reference": "9da209227fcc94b71dc9dd208a05e06d5847e994",
+                "url": "https://api.github.com/repos/itstructure/laravel-rbac/zipball/1738745d0d1d5367c8c0eeaeb1a2065daa0a7a35",
+                "reference": "1738745d0d1d5367c8c0eeaeb1a2065daa0a7a35",
                 "shasum": ""
             },
             "require": {
@@ -919,7 +919,7 @@
                 "rbac",
                 "role"
             ],
-            "time": "2020-07-12T12:32:14+00:00"
+            "time": "2020-09-09T14:06:13+00:00"
         },
         {
             "name": "jeroennoten/laravel-adminlte",

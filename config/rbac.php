@@ -4,7 +4,7 @@ return [
     'layout' => 'adminlte::page', // You must set it. Example: 'layout' => 'adminlte::page'
     'userModelClass' => App\User::class, // You can change it
     'adminUserId' => 1, // You must set it. This is the initial user id, which must be an administrator, at least at the first stage.
-    //'routesMainPermission' => Itstructure\LaRbac\Models\Permission::ADMINISTRATE_PERMISSION,  // You can change it
+    'routesMainPermission' => Itstructure\LaRbac\Models\Permission::ADMINISTRATE_PERMISSION,  // You can change it
     'memberNameAttributeKey' => function ($row) { // You can change it. And can simply set 'memberNameAttributeKey' => 'name'
         return $row->name;
     },
