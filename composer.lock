@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4f8bc4a63148286e4f76b73e902f9d3b",
+    "content-hash": "8c8d764cdfc1370ae78cf266393f5b7e",
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
@@ -804,6 +804,61 @@
                 "source": "https://github.com/guzzle/psr7/tree/1.8.1"
             },
             "time": "2021-03-21T16:25:00+00:00"
+        },
+        {
+            "name": "itstructure/laravel-detail-view",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/itstructure/laravel-detail-view.git",
+                "reference": "39c78b0fd91ee865ea3b44c1a5afea9bdc595631"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/itstructure/laravel-detail-view/zipball/39c78b0fd91ee865ea3b44c1a5afea9bdc595631",
+                "reference": "39c78b0fd91ee865ea3b44c1a5afea9bdc595631",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "~5.5.0|~5.6.0|~5.7.0|~5.8.0|^6.0|^7.0|^8.0",
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Itstructure\\DetailView\\DetailViewServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Itstructure\\DetailView\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Andrey Girnik",
+                    "email": "girnikandrey@gmail.com"
+                }
+            ],
+            "description": "Detail view table for laravel framework",
+            "keywords": [
+                "detail",
+                "detailview",
+                "laravel",
+                "table",
+                "view"
+            ],
+            "support": {
+                "issues": "https://github.com/itstructure/laravel-detail-view/issues",
+                "source": "https://github.com/itstructure/laravel-detail-view/tree/1.0.0"
+            },
+            "time": "2021-04-24T12:17:56+00:00"
         },
         {
             "name": "itstructure/laravel-grid-view",

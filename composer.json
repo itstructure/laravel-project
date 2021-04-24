@@ -12,6 +12,7 @@
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^1.0",
         "guzzlehttp/guzzle": "^6.3",
+        "itstructure/laravel-detail-view": "~1.0.0",
         "itstructure/laravel-grid-view": "~1.0.4",
         "itstructure/laravel-multi-menu": "~2.0.2",
         "itstructure/laravel-multilingual-tools": "~1.0.2",

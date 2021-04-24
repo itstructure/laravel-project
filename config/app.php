@@ -166,6 +166,7 @@ return [
          * Package Service Providers...
          */
         Itstructure\GridView\GridViewServiceProvider::class,
+        Itstructure\DetailView\DetailViewServiceProvider::class,
         Itstructure\LaRbac\RbacServiceProvider::class,
         Itstructure\MultiMenu\MultiMenuServiceProvider::class,
         Itstructure\Mult\MultServiceProvider::class,
